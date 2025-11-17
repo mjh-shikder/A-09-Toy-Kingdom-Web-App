@@ -6,7 +6,7 @@ import MyContainer from "../MyContainer";
 
 const HomeLayout = () => {
   return (
-    <div>
+    <div className="bg-base-200">
       <MyContainer>
         <Navbar></Navbar>
         <Outlet></Outlet>
