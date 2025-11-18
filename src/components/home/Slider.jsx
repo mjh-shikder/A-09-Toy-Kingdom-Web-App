@@ -1,9 +1,10 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "swiper/css/autoplay";
 export default function Slider() {
   return (
     <div>
@@ -13,6 +14,7 @@ export default function Slider() {
         modules={[Pagination]}
         pagination={{ clickable: true }}
         loop={true}
+        autoplay={{ delay: 5000 }}
         className="h-96 rounded-xl my-10"
       >
         <SwiperSlide>
