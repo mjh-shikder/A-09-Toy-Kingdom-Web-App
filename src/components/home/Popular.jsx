@@ -11,7 +11,7 @@ const Popular = ({ popularData }) => {
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-10 space-y-10 place-items-center  '>
                 
                 {
-                popularData.map(card=><Card card={card}></Card>)
+                popularData.map(card=><Card card={card} key={card.toyId}></Card>)
                 }   
                 
             
