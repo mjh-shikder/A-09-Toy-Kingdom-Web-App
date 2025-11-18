@@ -35,8 +35,7 @@ const DetailsCard = () => {
   return (
     <div className="bg-base-200">
       <MyContainer>
-        <Navbar></Navbar>
-
+       
         <div className="bg-white mt-10 rounded-xl p-10 grid grid-cols-12">
           <div className="col-span-7">
             <img div className="rounded-xl w-full " src={pictureURL} alt="" />
@@ -49,7 +48,7 @@ const DetailsCard = () => {
           </div>
         </div>
 
-        <Footer></Footer>
+       
       </MyContainer>
     </div>
   );

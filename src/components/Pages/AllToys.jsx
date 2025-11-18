@@ -11,7 +11,7 @@ const AllToys = () => {
   return (
     <div className="bg-base-200">
       <MyContainer>
-              <Navbar></Navbar>
+              
               <section className="bg-white rounded-xl p-10 mt-10">
                   
               <h1 className="text-center text-4xl font-semibold text-primary hover:text-secondary  ">All Toys</h1>
@@ -24,7 +24,7 @@ const AllToys = () => {
                   <Link to={'/'} className='btn btn-secondary px-13 text-center hover:btn-primary '>Show Less</Link>
                   </div>
               </section>
-              <Footer></Footer>
+              
               
           </MyContainer>
           
