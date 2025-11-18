@@ -3,19 +3,42 @@ import Logo from "../assets/Logo.png";
 import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
+  const links = <>
+    <li> <NavLink to={'/'} className={({ isActive }) => isActive ? "bg-primary text-white px-2.5 py-0.5 rounded-lg font-semibold  " : "text-secondary font-semibold"}>Home</NavLink> </li>
+    <li> <NavLink to={'/all-toys'} className={({ isActive }) => isActive ? "bg-primary text-white px-2.5 py-0.5 rounded-lg font-semibold  " : "text-secondary font-semibold"}>All Toys</NavLink> </li>
+    <li> <NavLink to={'/profile'} className={({ isActive }) => isActive ? "bg-primary text-white px-2.5 py-0.5 rounded-lg font-semibold  " : "text-secondary font-semibold"}>My Profile</NavLink> </li>
+    </>
   return (
-    <nav className="pt-2.5 flex justify-between items-center ">
-      <div>
-        <img className="w-36" src={Logo} alt="" />
+          <div className="navbar bg-base-200 ">
+  <div className="navbar-start">
+    <div className="dropdown">
+          <div tabIndex={0} role="button" className=" btn btn-ghost lg:hidden"> 
+            
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+          </div>
+          {/* small screen  */}
+      <ul
+        tabIndex="-1"
+        className=" dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow items-center text-center flex flex-col justify-center ">
+        {
+          links
+        }
+      </ul>
+    </div>
+    <Link to={'/'} className=" text-xl"><img className="w-36" src={Logo} alt="Logo" /></Link>
       </div>
-      <div className="space-x-3">
-        <NavLink to={'/'} className={({isActive})=> isActive? "bg-primary text-white px-2.5 py-0.5 rounded-lg font-semibold b ": "text-secondary font-semibold"}>Home</NavLink>
-        <NavLink to={'/profile'} className={({isActive})=> isActive? "bg-primary text-white px-2.5 py-0.5 rounded-lg font-semibold b ": "text-secondary font-semibold"} >My Profile</NavLink>
-      </div>
-      <div>
-        <Link className="btn btn-primary rounded-xl text-white ">Login</Link>
-      </div>
-    </nav>
+      {/* desktop */}
+  <div className="navbar-center hidden lg:flex  ">
+    <ul className=" space-x-5 px-1 flex items-center">
+        {
+          links
+        }
+    </ul>
+  </div>
+  <div className="navbar-end">
+    <Link className="btn btn-primary rounded-xl text-white ">Login</Link>
+  </div>
+</div>
   );
 };
 
