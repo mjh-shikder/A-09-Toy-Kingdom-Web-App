@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../Card';
+import { Link } from 'react-router';
 
 const Popular = ({ popularData }) => {
     
@@ -16,7 +17,9 @@ const Popular = ({ popularData }) => {
                 
             
             </div>
-            
+            <div className='flex justify-center '>
+            <Link to={'/all-toys'} className='btn btn-secondary px-13 text-center hover:btn-primary '>Show more</Link>
+            </div>
         </div>
     );
 };

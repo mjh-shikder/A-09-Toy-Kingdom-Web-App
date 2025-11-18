@@ -1,16 +1,22 @@
 import React from "react";
 import { LiaStarSolid } from "react-icons/lia";
+import { Link } from "react-router";
 
-const Card = ({ card }) => {
+const Card = ({card}) => {
+
+
+  
+
   const {
     toyName,
     price,
     description,
     rating,
     pictureURL,
-    availableQuantity,
+      availableQuantity,
+    toyId,
   } = card;
-  console.log(card);
+//   console.log(card);
 
   return (
     <div className="card bg-base-200 w-96 shadow-sm text-accent ">
@@ -30,9 +36,9 @@ const Card = ({ card }) => {
           <h3 className="font2 text-secondary bg-white py-0.5 border border-gray-100 rounded-md px-1.5">Available Quantit ({availableQuantity})</h3>
           <h3 className="text-primary text-lg font2 bg-white py-0.5 border border-gray-100 rounded-md px-1.5">${price}</h3>
         </div>
-        <button className="btn btn-primary hover:btn-secondary mt-1.5 ">
+        <Link to={`/card-details/${toyId}`} className="btn btn-primary hover:btn-secondary mt-1.5 ">
           VIew More
-        </button>
+        </Link>
       </div>
     </div>
   );
