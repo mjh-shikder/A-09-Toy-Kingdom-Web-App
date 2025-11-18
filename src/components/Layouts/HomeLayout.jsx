@@ -7,11 +7,23 @@ import MyContainer from "../MyContainer";
 const HomeLayout = () => {
   return (
     <div className="bg-base-200">
-      <MyContainer>
-        <Navbar></Navbar>
-        <Outlet></Outlet>
-        <Footer></Footer>
-      </MyContainer>
+      <header>
+        <nav>
+          <MyContainer>
+            <Navbar></Navbar>
+          </MyContainer>
+        </nav>
+      </header>
+      <main>
+        <MyContainer>
+          <Outlet></Outlet>
+        </MyContainer>
+      </main>
+      <footer>
+        <MyContainer>
+          <Footer></Footer>
+        </MyContainer>
+      </footer>
     </div>
   );
 };
