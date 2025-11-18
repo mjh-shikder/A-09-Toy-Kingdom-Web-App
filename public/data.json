@@ -478,5 +478,29 @@
     "description": "No-pedal training bike to teach balance and coordination.",
     "pictureURL": "https://images.unsplash.com/photo-1591020270735-d4fc1a514a7d?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "subCategory": "Ride-on Toys"
+  },
+  {
+    "toyId": 41,
+    "toyName": "Bubble Machine",
+    "sellerName": "Bubbly Fun",
+    "sellerEmail": "bubbles@bubblyfun.com",
+    "price": 34.99,
+    "rating": 4.8,
+    "availableQuantity": 90,
+    "description": "Automatic bubble blower that produces thousands of bubbles.",
+    "pictureURL": "https://images.unsplash.com/photo-1633368516457-e716168f66b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "subCategory": "Outdoor Play"
+  },
+  {
+    "toyId": 42,
+    "toyName": "Ninja Turtle Action Figures",
+    "sellerName": "Shell Shock",
+    "sellerEmail": "tmnt@shellshock.com",
+    "price": 44.99,
+    "rating": 4.7,
+    "availableQuantity": 70,
+    "description": "Set of 4 detailed Teenage Mutant Ninja Turtles figures.",
+    "pictureURL": "https://images.unsplash.com/photo-1550088230-c7c1807d0d85?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "subCategory": "Action Figures"
   }
 ]
