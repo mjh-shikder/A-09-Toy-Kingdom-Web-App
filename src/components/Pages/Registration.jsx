@@ -4,9 +4,10 @@ import { Link } from "react-router";
 
 const Registration = () => {
   return (
-    <div>
+      <div>
+           <title>Toy Kingdom - Register</title>
       <MyContainer>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-20">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-40 mb-40">
           <div className="card-body">
             <h1 className="text-3xl text-primary font-bold text-center">
               Register Now!

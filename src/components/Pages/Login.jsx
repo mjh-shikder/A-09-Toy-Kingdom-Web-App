@@ -4,9 +4,10 @@ import { Link } from "react-router";
 
 const Login = () => {
   return (
-    <div>
+      <div className="">
+          <title>Toy Kingdom - Login</title>
       <MyContainer>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-20">
+        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mb-40 mt-40">
           <div className="card-body">
             <h1 className="text-3xl text-secondary font-bold text-center">
               Login

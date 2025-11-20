@@ -25,6 +25,16 @@ export const router = createBrowserRouter([
         path: "/profile",
         element: <ProfilePage></ProfilePage>,
       },
+       {
+    path: '/login',
+    element: <Login></Login>,
+    hydrateFallbackElement: <Loading></Loading>
+  },
+  {
+    path: 'register',
+    element: <Registration></Registration>,
+    hydrateFallbackElement: <Loading></Loading>,
+  },
       // {
       //   path: "/card-details/:id",
       //   element: <DetailsCard></DetailsCard>,
@@ -51,16 +61,16 @@ export const router = createBrowserRouter([
     loader: () => fetch("./data.json"),
     hydrateFallbackElement: <Loading></Loading>,
   },
-  {
-    path: '/login',
-    element: <Login></Login>,
-    hydrateFallbackElement: <Loading></Loading>
-  },
-  {
-    path: 'register',
-    element: <Registration></Registration>,
-    hydrateFallbackElement: <Loading></Loading>,
-  },
+  // {
+  //   path: '/login',
+  //   element: <Login></Login>,
+  //   hydrateFallbackElement: <Loading></Loading>
+  // },
+  // {
+  //   path: 'register',
+  //   element: <Registration></Registration>,
+  //   hydrateFallbackElement: <Loading></Loading>,
+  // },
   {
     path: "/*",
     element: <ErrorPage></ErrorPage>,
