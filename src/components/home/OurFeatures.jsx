@@ -1,5 +1,5 @@
 import React from "react";
-import MyContainer from "./MyContainer";
+import MyContainer from "../MyContainer";
 import { TbTruckDelivery, TbTruckLoading } from "react-icons/tb";
 import { FaBoxOpen } from "react-icons/fa";
 import { RiSecurePaymentFill, RiShakeHandsFill } from "react-icons/ri";

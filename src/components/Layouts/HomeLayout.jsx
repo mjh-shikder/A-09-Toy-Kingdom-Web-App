@@ -3,7 +3,8 @@ import { Outlet } from "react-router";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import MyContainer from "../MyContainer";
-import OurFeatures from "../OurFeatures";
+import OurFeatures from "../home/OurFeatures";
+import ShopByCategory from "../home/ShopByCategory";
 
 const HomeLayout = () => {
   return (
@@ -23,6 +24,9 @@ const HomeLayout = () => {
           </section>
           <section>
             <OurFeatures></OurFeatures>
+          </section>
+          <section>
+            <ShopByCategory></ShopByCategory>
           </section>
         </MyContainer>
       </main>
