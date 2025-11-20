@@ -12,7 +12,7 @@ const AllToys = () => {
     <div className="bg-base-200">
       <title>Toys Kingdom - All Toys</title>
       <MyContainer>
-              
+              <Navbar></Navbar>
               <section className="bg-white rounded-xl p-10 mt-10">
                   
               <h1 className="text-center text-4xl font-semibold text-primary hover:text-secondary  ">All Toys</h1>
@@ -22,11 +22,11 @@ const AllToys = () => {
               }
               </div>
               <div className="flex justify-center ">
-                  <Link to={'/'} className='btn btn-secondary px-13 text-center hover:btn-primary '>Show Less</Link>
+                  <Link to={'/'} className='btn btn-secondary px-13 text-center hover:btn-primary '>Home</Link>
                   </div>
               </section>
               
-              
+              <Footer></Footer>
           </MyContainer>
           
     </div>

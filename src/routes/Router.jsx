@@ -29,13 +29,19 @@ export const router = createBrowserRouter([
         loader: () => fetch("./data.json"),
         hydrateFallbackElement: <Loading></Loading>,
       },
-      {
-        path: "/all-toys",
+      // {
+      //   path: "/all-toys",
+      //   element: <AllToys></AllToys>,
+      //   loader: () => fetch("./data.json"),
+      //   hydrateFallbackElement: <Loading></Loading>,
+      // },
+    ],
+  },
+  {
+ path: "/all-toys",
         element: <AllToys></AllToys>,
         loader: () => fetch("./data.json"),
         hydrateFallbackElement: <Loading></Loading>,
-      },
-    ],
   },
 
   {
