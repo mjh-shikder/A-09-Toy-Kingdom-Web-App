@@ -5,6 +5,7 @@ import Footer from "../Footer";
 import MyContainer from "../MyContainer";
 import OurFeatures from "../home/OurFeatures";
 import ShopByCategory from "../home/ShopByCategory";
+import NewArrivals from "../home/NewArrivals";
 
 const HomeLayout = () => {
   return (
@@ -21,12 +22,6 @@ const HomeLayout = () => {
         <MyContainer>
           <section>
             <Outlet></Outlet>
-          </section>
-          <section>
-            <OurFeatures></OurFeatures>
-          </section>
-          <section>
-            <ShopByCategory></ShopByCategory>
           </section>
         </MyContainer>
       </main>

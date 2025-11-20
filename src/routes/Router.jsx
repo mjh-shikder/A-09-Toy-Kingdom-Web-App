@@ -7,6 +7,7 @@ import DetailsCard from "../components/DetailsCard";
 import Loading from "../components/Pages/Loading";
 import AllToys from "../components/Pages/AllToys";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -23,12 +24,12 @@ export const router = createBrowserRouter([
         path: "/profile",
         element: <ProfilePage></ProfilePage>,
       },
-      {
-        path: "/card-details/:id",
-        element: <DetailsCard></DetailsCard>,
-        loader: () => fetch("./data.json"),
-        hydrateFallbackElement: <Loading></Loading>,
-      },
+      // {
+      //   path: "/card-details/:id",
+      //   element: <DetailsCard></DetailsCard>,
+      //   loader: () => fetch("./data.json"),
+      //   hydrateFallbackElement: <Loading></Loading>,
+      // },
       // {
       //   path: "/all-toys",
       //   element: <AllToys></AllToys>,
@@ -37,6 +38,12 @@ export const router = createBrowserRouter([
       // },
     ],
   },
+  {
+        path: "/card-details/:id",
+        element: <DetailsCard></DetailsCard>,
+        loader: () => fetch("./data.json"),
+        hydrateFallbackElement: <Loading></Loading>,
+      },
   {
  path: "/all-toys",
         element: <AllToys></AllToys>,
