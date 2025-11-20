@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage></HomePage>,
-        loader: () => fetch("./popular.json"),
+        loader: () => fetch("/popular.json"),
         hydrateFallbackElement: <Loading></Loading>,
       },
       {
@@ -37,7 +37,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
-  
+
   {
     path: "/*",
     element: <ErrorPage></ErrorPage>,

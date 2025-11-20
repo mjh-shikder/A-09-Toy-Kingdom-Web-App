@@ -18,7 +18,7 @@ const Popular = ({ popularData }) => {
             
             </div>
             <div className='flex justify-center '>
-            <Link to={'/all-toys'} className='btn btn-secondary px-13 text-center hover:btn-primary '>Show more</Link>
+            <Link to={'/all-toys'} className='btn btn-secondary px-13 text-center hover:btn-primary '>All Products</Link>
             </div>
         </div>
     );

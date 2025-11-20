@@ -10,6 +10,7 @@ const AllToys = () => {
 
   return (
     <div className="bg-base-200">
+      <title>Toys Kingdom - All Toys</title>
       <MyContainer>
               
               <section className="bg-white rounded-xl p-10 mt-10">

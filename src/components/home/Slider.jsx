@@ -11,7 +11,7 @@ export default function Slider() {
       <Swiper
         spaceBetween={20}
         slidesPerView={1}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         pagination={{ clickable: true }}
         loop={true}
         autoplay={{ delay: 5000 }}

@@ -3,10 +3,12 @@ import { Outlet } from "react-router";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import MyContainer from "../MyContainer";
+import OurFeatures from "../OurFeatures";
 
 const HomeLayout = () => {
   return (
     <div className="bg-base-200">
+      <title>Toys Kingdom - Home</title>
       <header>
         <nav>
           <MyContainer>
@@ -16,7 +18,12 @@ const HomeLayout = () => {
       </header>
       <main>
         <MyContainer>
-          <Outlet></Outlet>
+          <section>
+            <Outlet></Outlet>
+          </section>
+          <section>
+            <OurFeatures></OurFeatures>
+          </section>
         </MyContainer>
       </main>
       <footer>
