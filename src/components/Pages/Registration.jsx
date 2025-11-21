@@ -1,8 +1,29 @@
-import React from "react";
+import React, { use, useContext } from "react";
 import MyContainer from "../MyContainer";
 import { Link } from "react-router";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 const Registration = () => {
+//
+  const { createUser } = use(AuthContext);
+
+  const handleRegister = (e) => {
+    e.preventDefault(); 
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+    
+
+    createUser(email, password)
+     .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        alert(error.massage);
+      });
+    
+  }
+
   return (
       <div>
            <title>Toy Kingdom - Register</title>
@@ -12,7 +33,7 @@ const Registration = () => {
             <h1 className="text-3xl text-primary font-bold text-center">
               Register Now!
             </h1>
-            <form onSubmit={``}>
+            <form onSubmit={handleRegister}>
               <fieldset className="fieldset">
                 {/* Name Feild */}
                 <label className="label">Name</label>
@@ -29,6 +50,14 @@ const Registration = () => {
                   className="input"
                   name="email"
                   placeholder="Email"
+                />
+                {/* Photo url */}
+                <label className="label">Photo URL</label>
+                <input
+                  type="text"
+                  className="input"
+                  name="photoURL"
+                  placeholder="Live link of your photo"
                 />
                 {/* Password Feild */}
                 <label className="label">Password</label>

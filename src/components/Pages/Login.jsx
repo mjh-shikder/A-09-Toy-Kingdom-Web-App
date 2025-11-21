@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import MyContainer from "../MyContainer";
 import { Link } from "react-router";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 const Login = () => {
+
+  const authInfo = useContext(AuthContext)
+  console.log(authInfo);
+  
+
   return (
-      <div className="">
+    <div className="">
           <title>Toy Kingdom - Login</title>
       <MyContainer>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mb-40 mt-40">
