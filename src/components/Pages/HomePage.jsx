@@ -14,7 +14,7 @@ const HomePage = () => {
       <Slider></Slider>
       <Popular popularData={popularData}></Popular>
       <OurFeatures></OurFeatures>
-      <section className="mt-60 md:mt-10">
+      <section className="mt-10">
         <ShopByCategory></ShopByCategory>
       </section>
       <NewArrivals></NewArrivals>
