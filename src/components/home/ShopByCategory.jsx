@@ -27,7 +27,21 @@ const ShopByCategory = () => {
           modules={[Autoplay]}
           pagination={{ clickable: true }}
           loop={true}
-          autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 2000 }}
+          breakpoints={{
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            1024:{
+          slidesPerView: 5,
+              spaceBetween: 10,
+            }
+          }}
           className="h-80 rounded-xl my-10"
         >
           <SwiperSlide className="rounded-2xl  ">
@@ -46,111 +60,113 @@ const ShopByCategory = () => {
               </div>
             </Link>
           </SwiperSlide>
-                  <SwiperSlide className="rounded-2xl ">
-                      <Link to={"/all-toys"}>
-            <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
-              <div className=" rounded-xl mt-10 w-2/3 ">
-                <img
-                  className="rounded-xl  "
-                  src={DartImg}
-                  alt="category-image"
+          <SwiperSlide className="rounded-2xl ">
+            <Link to={"/all-toys"}>
+              <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
+                <div className=" rounded-xl mt-10 w-2/3 ">
+                  <img
+                    className="rounded-xl  "
+                    src={DartImg}
+                    alt="category-image"
                   />
+                </div>
+                <div>
+                  <h2 className="text-accent text-2xl font-semibold ">
+                    Dart Board
+                  </h2>
+                </div>
               </div>
-              <div>
-                <h2 className="text-accent text-2xl font-semibold ">
-                  Dart Board
-                </h2>
-              </div>
-            </div>
-                  </Link>
+            </Link>
           </SwiperSlide>
-                  <SwiperSlide className="rounded-2xl ">
-                      <Link to={"/all-toys"}>
-            <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
-              <div className=" rounded-xl mt-10 w-2/3 ">
-                <img
-                  className="rounded-xl  "
-                  src={DroneImg}
-                  alt="category-image"
+          <SwiperSlide className="rounded-2xl ">
+            <Link to={"/all-toys"}>
+              <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
+                <div className=" rounded-xl mt-10 w-2/3 ">
+                  <img
+                    className="rounded-xl  "
+                    src={DroneImg}
+                    alt="category-image"
                   />
+                </div>
+                <div>
+                  <h2 className="text-accent text-2xl font-semibold ">
+                    Drones
+                  </h2>
+                </div>
               </div>
-              <div>
-                <h2 className="text-accent text-2xl font-semibold ">Drones</h2>
-              </div>
-            </div>
-                  </Link>
+            </Link>
           </SwiperSlide>
-                  <SwiperSlide className="rounded-2xl ">
-                      <Link to={"/all-toys"}>
-            <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
-              <div className=" rounded-xl mt-10 w-2/3 ">
-                <img
-                  className="rounded-xl "
-                  src={GameImg}
-                  alt="category-image"
+          <SwiperSlide className="rounded-2xl ">
+            <Link to={"/all-toys"}>
+              <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
+                <div className=" rounded-xl mt-10 w-2/3 ">
+                  <img
+                    className="rounded-xl "
+                    src={GameImg}
+                    alt="category-image"
                   />
+                </div>
+                <div>
+                  <h2 className="text-accent text-2xl font-semibold mt-12">
+                    Video Games
+                  </h2>
+                </div>
               </div>
-              <div>
-                <h2 className="text-accent text-2xl font-semibold mt-12">
-                  Video Games
-                </h2>
-              </div>
-            </div>
-                  </Link>
+            </Link>
           </SwiperSlide>
-                  <SwiperSlide className="rounded-2xl ">
-                      <Link to={"/all-toys"}>
-            <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
-              <div className=" rounded-xl mt-10 w-2/3 ">
-                <img
-                  className="rounded-xl rotate-45"
-                  src={SpinnerImg}
-                  alt="category-image"
+          <SwiperSlide className="rounded-2xl ">
+            <Link to={"/all-toys"}>
+              <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
+                <div className=" rounded-xl mt-10 w-2/3 ">
+                  <img
+                    className="rounded-xl rotate-45"
+                    src={SpinnerImg}
+                    alt="category-image"
                   />
+                </div>
+                <div>
+                  <h2 className="text-accent text-2xl font-semibold ">
+                    Spinners
+                  </h2>
+                </div>
               </div>
-              <div>
-                <h2 className="text-accent text-2xl font-semibold ">
-                  Spinners
-                </h2>
-              </div>
-            </div>
-                  </Link>
+            </Link>
           </SwiperSlide>
-                  <SwiperSlide className="rounded-2xl ">
-                      <Link to={"/all-toys"}>
-            <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
-              <div className=" rounded-xl mt-10 w-2/3 ">
-                <img
-                  className="rounded-xl  "
-                  src={PaintingImg}
-                  alt="category-image"
+          <SwiperSlide className="rounded-2xl ">
+            <Link to={"/all-toys"}>
+              <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
+                <div className=" rounded-xl mt-10 w-2/3 ">
+                  <img
+                    className="rounded-xl  "
+                    src={PaintingImg}
+                    alt="category-image"
                   />
+                </div>
+                <div>
+                  <h2 className="text-accent text-2xl font-semibold mt-9">
+                    Drawing
+                  </h2>
+                </div>
               </div>
-              <div>
-                <h2 className="text-accent text-2xl font-semibold mt-9">
-                  Drawing
-                </h2>
-              </div>
-            </div>
-                  </Link>
+            </Link>
           </SwiperSlide>
-                  <SwiperSlide className="rounded-2xl ">
-                      <Link to={"/all-toys"}>
-            <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
-              <div className=" rounded-xl mt-10 w-2/3 ">
-                <img
-                  className="rounded-xl  "
-                  src={TrainImg}
-                  alt="category-image"
+          <SwiperSlide className="rounded-2xl ">
+            <Link to={"/all-toys"}>
+              <div className="bg-base-200 hover:bg-primary w-full h-full rounded-xl p-5 flex flex-col items-center ">
+                <div className=" rounded-xl mt-10 w-2/3 ">
+                  <img
+                    className="rounded-xl  "
+                    src={TrainImg}
+                    alt="category-image"
                   />
+                </div>
+                <div>
+                  <h2 className="text-accent text-2xl font-semibold mt-10 ">
+                    Trains
+                  </h2>
+                </div>
               </div>
-              <div>
-                <h2 className="text-accent text-2xl font-semibold mt-10 ">
-                  Trains
-                </h2>
-              </div>
-            </div>
-                  </Link>
+            </Link>
           </SwiperSlide>
         </Swiper>
       </div>
