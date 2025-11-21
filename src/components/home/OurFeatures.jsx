@@ -6,8 +6,8 @@ import { RiSecurePaymentFill, RiShakeHandsFill } from "react-icons/ri";
 
 const OurFeatures = () => {
   return (
-    <div className="flex justify-between items-center bg-base-100 mt-10 rounded-xl p-2 h-44">
-      <div className="w-3/12 h-10/12 border-r border-gray-200 rounded-xl flex items-center justify-center gap-5 text-primary hover:text-secondary ">
+    <div className="grid md:grid-cols-4 grid-cols-2 justify-between items-center bg-base-100 mt-10 rounded-xl  md:h-44 space-y-5 md:space-y-0 py-6">
+      <div className=" md:border-r h-full border-0 border-gray-200  flex items-center justify-center gap-5 text-primary hover:text-secondary ">
         <div>
           <TbTruckDelivery size={40}></TbTruckDelivery>
         </div>
@@ -16,7 +16,7 @@ const OurFeatures = () => {
           <p className="text-base-300 text-xs">Inside Dhaka</p>
         </div>
       </div>
-      <div className="w-3/12 h-10/12 border-r border-gray-200 rounded-xl flex items-center justify-center gap-5 text-primary hover:text-secondary ">
+      <div className=" md:border-r h-full border-0 border-gray-200  flex items-center justify-center gap-5 text-primary hover:text-secondary ">
         <div>
           <FaBoxOpen size={40}></FaBoxOpen>
         </div>
@@ -25,7 +25,7 @@ const OurFeatures = () => {
           <p className="text-base-300 text-xs">In 14 Days</p>
         </div>
       </div>
-      <div className="w-3/12 h-10/12 border-r border-gray-200 rounded-xl flex items-center justify-center gap-5 text-primary hover:text-secondary ">
+      <div className=" md:border-r h-full border-0 border-gray-200  flex items-center justify-center gap-5 text-primary hover:text-secondary ">
         <div>
           <RiShakeHandsFill size={40}></RiShakeHandsFill>
         </div>
@@ -34,7 +34,7 @@ const OurFeatures = () => {
           <p className="text-base-300 text-xs ">Online 24 Hours</p>
         </div>
       </div>
-      <div className="w-3/12 h-10/12 rounded-xl flex items-center justify-center gap-5 text-primary hover:text-secondary ">
+      <div className=" rounded-xl flex items-center justify-center gap-5 text-primary hover:text-secondary ">
         <div>
           <RiSecurePaymentFill size={40}></RiSecurePaymentFill>
         </div>
