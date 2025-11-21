@@ -37,10 +37,10 @@ const ShopByCategory = () => {
               slidesPerView: 3,
               spaceBetween: 10,
             },
-            1024:{
-          slidesPerView: 5,
+            1280: {
+              slidesPerView: 5,
               spaceBetween: 10,
-            }
+            },
           }}
           className="h-80 rounded-xl my-10"
         >
