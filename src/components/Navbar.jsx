@@ -5,7 +5,12 @@ import { AuthContext } from "../Contexts/AuthContext";
 
 const Navbar = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    logOut()
+    
+  }
 
   const links = <>
     <li> <NavLink to={'/'} className={({ isActive }) => isActive ? "bg-primary text-white px-2.5 py-0.5 rounded-lg font-semibold  " : "text-secondary font-semibold"}>Home</NavLink> </li>
@@ -50,7 +55,7 @@ const Navbar = () => {
         <ul className=" space-x-5 px-1 flex items-center">{links}</ul>
       </div>
       <div className="navbar-end">
-        {user ? <div>{user.email} <button className="btn btn-primary rounded-xl text-white ">Logout</button></div> :<div>
+        {user ? <div>{user.email} <button onClick={handleLogout} className="btn btn-primary rounded-xl text-white ">Logout</button></div> :<div>
         <Link to={'/login'} className="btn btn-primary rounded-xl text-white ">Login</Link>
         </div> }
         
