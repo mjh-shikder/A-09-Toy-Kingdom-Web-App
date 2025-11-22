@@ -3,10 +3,16 @@ import MyContainer from "../MyContainer";
 import { Link } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
 const Registration = () => {
 //
-  const { createUser, setUser } = use(AuthContext);
+  const { createUser, setUser, showPassword, setShowPassword } = use(AuthContext);
+
+  const handleShowHidePassword = e => {
+    e.preventDefault();
+    setShowPassword(!showPassword);
+  }
 
   const handleRegister = (e) => {
     e.preventDefault(); 
@@ -43,7 +49,7 @@ const Registration = () => {
               Register Now!
             </h1>
             <form onSubmit={handleRegister}>
-              <fieldset className="fieldset">
+              <fieldset className="fieldset relative">
                 {/* Name Feild */}
                 <label className="label">Name</label>
                 <input
@@ -71,11 +77,14 @@ const Registration = () => {
                 {/* Password Feild */}
                 <label className="label">Password</label>
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   className="input"
                   name="password"
                   placeholder="Password"
                 />
+                                <button className=" absolute top-62 right-6" onClick={handleShowHidePassword}>
+                                  {showPassword ? <VscEye size={22}></VscEye> : <VscEyeClosed size={22}></VscEyeClosed> }
+                                </button>
                 <div></div>
                 <button className="btn btn-primary mt-4">Register</button>
               </fieldset>
