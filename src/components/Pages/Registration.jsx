@@ -5,18 +5,21 @@ import { AuthContext } from "../../Contexts/AuthContext";
 
 const Registration = () => {
 //
-  const { createUser } = use(AuthContext);
+  const { createUser, setUser } = use(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault(); 
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+    const photoURL = e.target.photoURL.value;
+    
+    console.log(email, password, photoURL);
     
 
     createUser(email, password)
      .then((res) => {
-        console.log(res);
+       const user = res.user;
+       setUser(user);
       })
       .catch((error) => {
         alert(error.massage);
