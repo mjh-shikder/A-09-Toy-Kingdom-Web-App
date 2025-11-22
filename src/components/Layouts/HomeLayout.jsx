@@ -6,6 +6,7 @@ import MyContainer from "../MyContainer";
 import OurFeatures from "../home/OurFeatures";
 import ShopByCategory from "../home/ShopByCategory";
 import NewArrivals from "../home/NewArrivals";
+import { ToastContainer } from "react-toastify";
 
 const HomeLayout = () => {
   return (
@@ -29,6 +30,7 @@ const HomeLayout = () => {
         <MyContainer>
           <Footer></Footer>
         </MyContainer>
+        <ToastContainer></ToastContainer>
       </footer>
     </div>
   );

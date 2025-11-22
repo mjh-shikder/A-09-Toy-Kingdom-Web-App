@@ -2,6 +2,7 @@ import React, { use } from "react";
 import MyContainer from "../MyContainer";
 import { Link } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Registration = () => {
 //
@@ -20,9 +21,10 @@ const Registration = () => {
      .then((res) => {
        const user = res.user;
        setUser(user);
+       toast('Registration Successful')
       })
       .catch((error) => {
-        alert(error.massage);
+        toast.error(error.message)
       });
     }
     

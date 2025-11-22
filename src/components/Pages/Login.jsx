@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import MyContainer from "../MyContainer";
 import { Link } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { userLogin } = useContext(AuthContext);
@@ -17,9 +18,10 @@ const Login = () => {
     userLogin(email, password)
       .then((res) => {
         console.log(res.user);
+        toast.success('Login Successful')
       })
       .catch((error) => {
-        alert(error.message, error.code);
+        toast.error(error.message, error.code)
       });
   };
 
