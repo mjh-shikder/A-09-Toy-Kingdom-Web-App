@@ -3,9 +3,16 @@ import MyContainer from "../MyContainer";
 import { Link } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { userLogin, showPassword, setShowPassword } = useContext(AuthContext);
+
+  const handleShowHidePassword = e => {
+    e.preventDefault();
+    setShowPassword(!showPassword);
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -42,7 +49,7 @@ const Login = () => {
               Login
             </h1>
             <form onSubmit={handleLogin}>
-              <fieldset className="fieldset">
+              <fieldset className="fieldset relative">
                 {/* Email Feild */}
                 <label className="label">Email</label>
                 <input
@@ -54,11 +61,14 @@ const Login = () => {
                 {/* Password Feild */}
                 <label className="label">Password</label>
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   className="input"
                   name="password"
                   placeholder="Password"
                 />
+                <button className=" absolute top-27 right-6" onClick={handleShowHidePassword}>
+                  {showPassword ? <VscEye size={22}></VscEye> : <VscEyeClosed size={22}></VscEyeClosed> }
+                </button>
                 <div>
                   <a className="link link-hover text-primary">
                     Forgot password?

@@ -7,6 +7,7 @@ const AuthProvider = ({ children }) => {
   //
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
 
   console.log('user from authprovider', {user});
   
@@ -46,6 +47,8 @@ const AuthProvider = ({ children }) => {
     createUser,
     userLogin,
     logOut,
+    showPassword,
+    setShowPassword,
   };
 
   return <AuthContext value={authInfo}>{children}</AuthContext>;
