@@ -5,8 +5,25 @@ import { AuthContext } from "../../Contexts/AuthContext";
 
 const Login = () => {
 
-  const authInfo = useContext(AuthContext)
-  console.log(authInfo);
+  const { userLogin } = useContext(AuthContext);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    // console.log({email, password});
+    
+    userLogin(email, password)
+      .then(res => {
+      console.log(res.user); 
+      })
+      .catch(error => {
+      alert(error.message, error.code)
+    })
+
+  }
   
 
   return (
@@ -18,7 +35,7 @@ const Login = () => {
             <h1 className="text-3xl text-secondary font-bold text-center">
               Login
             </h1>
-            <form onSubmit={``}>
+            <form onSubmit={handleLogin}>
               <fieldset className="fieldset">
                 {/* Email Feild */}
                 <label className="label">Email</label>
