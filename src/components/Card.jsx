@@ -1,5 +1,5 @@
 import React from "react";
-import { LiaStarSolid } from "react-icons/lia";
+import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
 
 const Card = ({card}) => {
@@ -28,7 +28,7 @@ const Card = ({card}) => {
           <h2 className="cardTitle text-primary font-semibold text-2xl ">{toyName}</h2>
           <div className="font2 flex items-center font-semibold gap-1 text-secondary bg-white py-0.5 border border-gray-100 rounded-md px-1.5">
             {" "}
-            <LiaStarSolid size={17}></LiaStarSolid> {rating}
+            <FaStar size={17}></FaStar> {rating}
           </div>
         </div>
         <p className="cardDes">{description}</p>
