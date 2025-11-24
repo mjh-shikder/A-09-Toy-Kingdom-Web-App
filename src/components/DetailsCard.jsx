@@ -33,21 +33,21 @@ const DetailsCard = () => {
   } = toys;
 
   const handleBuyNow = () => {
-    toast.success('Order Placed')
-}
+    toast.success("Order Placed");
+  };
 
-const handleAddtoCart = () => {
-  toast('Added To Cart')
-}
+  const handleAddtoCart = () => {
+    toast("Added To Cart");
+  };
   return (
     <div className="bg-base-200">
       <MyContainer>
         <Navbar></Navbar>
-        <div className="bg-white mt-10 rounded-xl p-10 grid grid-cols-12">
+        <div className="bg-white mt-10 rounded-xl p-10 grid grid-cols-12 ">
           <div className="col-span-7">
             <img div className="rounded-xl w-full " src={pictureURL} alt="" />
           </div>
-          <div className="col-span-5 px-5 text-accent">
+          <div className="col-span-5 px-7 text-accent">
             <h1 className="text-4xl font-semibold  ">{toyName}</h1>
             <p className="mt-3 text-lg ">{description}</p>
             <p className="mt-3 text-lg flex items-center gap-1.5 text-primary ">
@@ -60,7 +60,16 @@ const handleAddtoCart = () => {
               Available Quantity {availableQuantity}
             </p>
             <div className="border-b border-gray-100 my-5"></div>
-            <p className="text-3xl text-primary ">${price}</p>
+            <div>
+              <div className="flex space-x-2 ">
+                <p className="text-sm text-gray-400 line-through ">
+                  ${(Number(price) * 1.1).toFixed(2)}
+                </p>
+                <p className="text-primary">-10%</p>
+              </div>
+
+              <p className="text-3xl text-secondary ">${price}</p>
+            </div>
             <div className="border-b border-gray-100 my-5"></div> {/* Border */}
             <div className="border rounded-lg p-3 border-gray-100 text-gray-600 ">
               {" "}
@@ -70,8 +79,18 @@ const handleAddtoCart = () => {
               <h3>Email : {sellerEmail}</h3>
             </div>
             <div className="mt-5 space-x-10 ">
-              <button onClick={handleBuyNow} className="btn btn-secondary btn-lg px-10 ">Buye Now</button>
-              <button onClick={handleAddtoCart} className="btn btn-primary btn-outline btn-lg px-10 ">Add to Cart</button>
+              <button
+                onClick={handleBuyNow}
+                className="btn btn-secondary btn-lg px-10 "
+              >
+                Buye Now
+              </button>
+              <button
+                onClick={handleAddtoCart}
+                className="btn btn-primary btn-outline btn-lg px-10 "
+              >
+                Add to Cart
+              </button>
             </div>
           </div>
         </div>
