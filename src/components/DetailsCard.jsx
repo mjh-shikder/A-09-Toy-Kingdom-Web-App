@@ -43,11 +43,13 @@ const DetailsCard = () => {
     <div className="bg-base-200">
       <MyContainer>
         <Navbar></Navbar>
-        <div className="bg-white mt-10 rounded-xl p-10 grid grid-cols-12 ">
+        <div className="bg-white mt-10 rounded-xl md:p-10 md:grid md:grid-cols-12 flex flex-col justify-start ">
+          {/* image container */}
           <div className="col-span-7">
             <img div className="rounded-xl w-full " src={pictureURL} alt="" />
           </div>
-          <div className="col-span-5 px-7 text-accent">
+          {/* others info */}
+          <div className="col-span-5 md:px-7 text-accent">
             <h1 className="text-4xl font-semibold  ">{toyName}</h1>
             <p className="mt-3 text-lg ">{description}</p>
             <p className="mt-3 text-lg flex items-center gap-1.5 text-primary ">
@@ -78,7 +80,7 @@ const DetailsCard = () => {
               <h3>Seller : {sellerName}</h3>
               <h3>Email : {sellerEmail}</h3>
             </div>
-            <div className="mt-5 space-x-10 ">
+            <div className="mt-5 flex gap-5 md:space-x-10 ">
               <button
                 onClick={handleBuyNow}
                 className="btn btn-secondary btn-lg px-10 "
