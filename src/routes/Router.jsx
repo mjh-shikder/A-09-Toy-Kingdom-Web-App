@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/card-details/:id",
-    element: <DetailsCard></DetailsCard>,
+    element: <PrivateRoute><DetailsCard></DetailsCard></PrivateRoute> ,
     loader: () => fetch("./data.json"),
     hydrateFallbackElement: <Loading></Loading>,
   },

@@ -26,8 +26,8 @@ const ProfilePage = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center mt-5 ">
-          <p className="text-xl">{user?.displayName}</p>
-          <p>{user?.email}</p>
+          <p className="text-xl text-accent font-bold ">{user?.displayName}</p>
+          <p className="text-accent ">{user?.email}</p>
           <button
             onClick={handleOpenForm}
             className="btn btn-secondary rounded-xl btn-outline my-5"

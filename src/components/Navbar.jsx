@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import Logo from "../assets/Logo.png";
-import { Link, NavLink } from "react-router";
+import { Link, Links, NavLink } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import { toast } from "react-toastify";
 
@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const [showTooltip, setShowTooltip] = useState(false);
 
-console.log(showTooltip, 'show Tooltip');
+  console.log(showTooltip, "show Tooltip");
 
   const handleLogout = () => {
     logOut()
@@ -88,7 +88,7 @@ console.log(showTooltip, 'show Tooltip');
           {/* small screen  */}
           <ul
             tabIndex="-1"
-            className=" dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow items-center text-center flex flex-col justify-center "
+            className=" lg:hidden dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow items-center text-center flex flex-col justify-center "
           >
             {links}
           </ul>
@@ -104,12 +104,23 @@ console.log(showTooltip, 'show Tooltip');
       <div className="navbar-end">
         {user ? (
           <div>
-            <div onMouseEnter={() => setShowTooltip(true)} onMouseLeave={() => setShowTooltip(false)} className="avatar mr-3.5 items-center ">
-              {showTooltip && <p className="mr-3.5 text-lg border rounded-xl px-2 text-primary ">{user?.displayName}</p>}
-              <div className="w-12 rounded-full ">
-                <img src={user?.photoURL} />
-              </div>
+            <Link to={'/profile'}>
+            <div
+              onMouseEnter={() => setShowTooltip(true)}
+              onMouseLeave={() => setShowTooltip(false)}
+              className="avatar mr-3.5 items-center "
+            >
+              {showTooltip && (
+                <p className="mr-3.5 text-lg border rounded-lg px-2 text-primary font-semibold ">
+                  {user?.displayName}
+                </p>
+              )}
+              
+                <div className="w-12 rounded-full ">
+                  <img src={user?.photoURL} />
+                </div>
             </div>{" "}
+              </Link>
             <button
               onClick={handleLogout}
               className="btn btn-primary rounded-xl text-white "
