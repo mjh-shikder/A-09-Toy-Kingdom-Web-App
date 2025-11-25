@@ -3,11 +3,10 @@ import MyContainer from "../MyContainer";
 import { Link } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
 const Login = () => {
-  const { userLogin, showPassword, setShowPassword } = useContext(AuthContext);
+  const { userLogin, showPassword, setShowPassword, googleSignin, setUser } = useContext(AuthContext);
 
   const handleShowHidePassword = (e) => {
     e.preventDefault();
@@ -33,7 +32,15 @@ const Login = () => {
   };
 
   const handleGoogleLogin = () => {
-    console.log("google");
+    googleSignin()
+      .then(res => {
+        const user = res.user;
+        setUser(user);
+        toast.success('Login Successful')
+      })
+      .catch(err => {
+      toast.error(err.message, err.code)
+    })
   };
 
   return (
