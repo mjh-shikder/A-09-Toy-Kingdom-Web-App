@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import MyContainer from "../MyContainer";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
@@ -8,12 +8,19 @@ import { VscEye, VscEyeClosed } from "react-icons/vsc";
 const Login = () => {
   const { userLogin, showPassword, setShowPassword, googleSignin, setUser } = useContext(AuthContext);
   
+
+  const location = useLocation()
+  const navigate = useNavigate()
+console.log(location);
+
+
   // Show and Hide Password 
   const handleShowHidePassword = (e) => {
     e.preventDefault();
     setShowPassword(!showPassword);
   };
 
+  // Login with email and password
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -26,6 +33,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         toast.success("Login Successful");
+        navigate(`${location.state ? location.state : '/'}`)
       })
       .catch((error) => {
         toast.error(error.message, error.code);
@@ -39,6 +47,7 @@ const Login = () => {
         const user = res.user;
         setUser(user);
         toast.success('Login Successful')
+        navigate(`${location.state ? location.state : '/'}`)
       })
       .catch(err => {
       toast.error(err.message, err.code)

@@ -3,11 +3,13 @@ import { AuthContext } from "../../Contexts/AuthContext";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import { toast } from "react-toastify";
+
 
 const ProfilePage = () => {
   const { user, setUser } = useContext(AuthContext);
 
-  //   console.log(user);
+    //   console.log(user);
 
   const [isOpen, setIsOpen] = useState(false);
   //   console.log(isOpen);
@@ -28,7 +30,8 @@ const ProfilePage = () => {
       displayName: name,
       photoURL: photo,
     }).then(() => {
-     setUser({...user, photoURL:photo, displayName:name} )
+        setUser({ ...user, photoURL: photo, displayName: name })
+        toast.success('Profile Updated')
     });
   };
 
