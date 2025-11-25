@@ -7,7 +7,8 @@ import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
 const Login = () => {
   const { userLogin, showPassword, setShowPassword, googleSignin, setUser } = useContext(AuthContext);
-
+  
+  // Show and Hide Password 
   const handleShowHidePassword = (e) => {
     e.preventDefault();
     setShowPassword(!showPassword);
