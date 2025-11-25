@@ -7,7 +7,7 @@ import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
 const Registration = () => {
   //
-  const { createUser, setUser, showPassword, setShowPassword } =
+  const { createUser, setUser, showPassword, setShowPassword, googleSignin } =
     use(AuthContext);
 
   const handleShowHidePassword = (e) => {
@@ -35,7 +35,15 @@ const Registration = () => {
   };
 
   const handleGoogleSignUp = () => {
-    console.log("sign up with google");
+    googleSignin()
+          .then(res => {
+            const user = res.user;
+            setUser(user);
+            toast.success('Login Successful')
+          })
+          .catch(err => {
+          toast.error(err.message, err.code)
+        })
   };
 
   return (
