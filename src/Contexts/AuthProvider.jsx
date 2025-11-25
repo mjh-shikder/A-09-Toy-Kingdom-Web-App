@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
 
-  console.log('user from authprovider', {user});
+  // console.log('user from authprovider', {user});
   
 
   // Create user with email and password.
@@ -27,15 +27,17 @@ const AuthProvider = ({ children }) => {
   // Observer
   useEffect(() => {
    const unsubscribe= onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+     setUser(currentUser);
+     setLoading(false)
     });
     return () => {
       unsubscribe()
+      
     }
   })
 
   // Google Sign in
-  const googleProvider = new GoogleAuthProvider;
+  const googleProvider = new GoogleAuthProvider()
   const googleSignin = () => {
     return signInWithPopup(auth, googleProvider)
   }

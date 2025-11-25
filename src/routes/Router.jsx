@@ -8,6 +8,7 @@ import Loading from "../components/Pages/Loading";
 import AllToys from "../components/Pages/AllToys";
 import Login from "../components/Pages/Login";
 import Registration from "../components/Pages/Registration";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -23,18 +24,18 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <ProfilePage></ProfilePage>,
+        element: <PrivateRoute><ProfilePage></ProfilePage></PrivateRoute> ,
       },
-       {
-    path: '/login',
-    element: <Login></Login>,
-    hydrateFallbackElement: <Loading></Loading>
-  },
-  {
-    path: 'register',
-    element: <Registration></Registration>,
-    hydrateFallbackElement: <Loading></Loading>,
-  },
+      {
+        path: "/login",
+        element: <Login></Login>,
+        hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "register",
+        element: <Registration></Registration>,
+        hydrateFallbackElement: <Loading></Loading>,
+      },
       // {
       //   path: "/card-details/:id",
       //   element: <DetailsCard></DetailsCard>,
