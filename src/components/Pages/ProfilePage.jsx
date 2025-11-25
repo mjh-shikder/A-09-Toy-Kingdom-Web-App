@@ -1,19 +1,36 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 const ProfilePage = () => {
-  const { user } = useContext(AuthContext);
+  const { user, setUser } = useContext(AuthContext);
 
-  console.log(user);
+  //   console.log(user);
 
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  //   console.log(isOpen);
 
   const handleOpenForm = () => {
     setIsOpen(!isOpen);
   };
 
+  // Update Informaiton
+  const handleUpdateInfo = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    //   console.log(name, photo);
+
+    updateProfile(auth.currentUser, {
+      displayName: name,
+      photoURL: photo,
+    }).then(() => {
+     setUser({...user, photoURL:photo, displayName:name} )
+    });
+  };
 
   return (
     <div>
@@ -26,8 +43,17 @@ const ProfilePage = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center mt-5 ">
-          <p className="text-xl text-accent font-bold ">{user?.displayName}</p>
-          <p className="text-accent ">{user?.email}</p>
+          <div className="bg-base-200 p-5 rounded-xl ">
+            <p className="text-xl text-accent  ">
+              Name:{" "}
+              <span className="text-xl text-accent font-bold ">
+                {user?.displayName}
+              </span>
+            </p>
+            <p className="text-accent ">
+              Email: <span className="font-semibold ">{user?.email}</span>
+            </p>
+          </div>
           <button
             onClick={handleOpenForm}
             className="btn btn-secondary rounded-xl btn-outline my-5"
@@ -36,23 +62,28 @@ const ProfilePage = () => {
           </button>
 
           {isOpen ? (
-            <form className="bg-base-200 p-5 rounded-xl " onSubmit={``}>
+            <form
+              className="bg-base-200 p-5 rounded-xl w-2xs "
+              onSubmit={handleUpdateInfo}
+            >
               <fieldset className="fieldset relative">
                 {/* Email Feild */}
                 <label className="label">Name</label>
                 <input
-                  type="email"
-                  className="input"
-                  name="email"
-                  placeholder="Email"
+                  type="name"
+                  className="input rounded-xl"
+                  name="name"
+                  placeholder="Name"
+                  defaultValue={user?.displayName}
                 />
                 {/* Password Feild */}
                 <label className="label">Photo URL</label>
                 <input
                   type="text"
-                  className="input"
-                  name="password"
-                  placeholder="Password"
+                  className="input rounded-xl"
+                  name="photo"
+                  placeholder="Photo URL"
+                  defaultValue={user?.photoURL}
                 />
 
                 <button className="btn btn-primary mt-4 rounded-xl ">

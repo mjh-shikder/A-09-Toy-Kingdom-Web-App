@@ -10,11 +10,13 @@ const Registration = () => {
   const { createUser, setUser, showPassword, setShowPassword, googleSignin } =
     use(AuthContext);
 
+  // show hide password function
   const handleShowHidePassword = (e) => {
     e.preventDefault();
     setShowPassword(!showPassword);
   };
 
+  // Email, password registration
   const handleRegister = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -34,6 +36,8 @@ const Registration = () => {
       });
   };
 
+
+  // Login with google
   const handleGoogleSignUp = () => {
     googleSignin()
           .then(res => {
@@ -45,6 +49,7 @@ const Registration = () => {
           toast.error(err.message, err.code)
         })
   };
+  
 
   return (
     <div>
@@ -61,7 +66,7 @@ const Registration = () => {
                 <label className="label">Name</label>
                 <input
                   type="text"
-                  className="input"
+                  className="input rounded-xl"
                   name="name"
                   placeholder="Your Name"
                 />
@@ -69,7 +74,7 @@ const Registration = () => {
                 <label className="label">Email</label>
                 <input
                   type="email"
-                  className="input"
+                  className="input rounded-xl"
                   name="email"
                   placeholder="Email"
                 />
@@ -77,7 +82,7 @@ const Registration = () => {
                 <label className="label">Photo URL</label>
                 <input
                   type="text"
-                  className="input"
+                  className="input rounded-xl"
                   name="photoURL"
                   placeholder="Live link of your photo"
                 />
@@ -85,7 +90,7 @@ const Registration = () => {
                 <label className="label">Password</label>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="input"
+                  className="input rounded-xl"
                   name="password"
                   placeholder="Password"
                 />
@@ -100,13 +105,13 @@ const Registration = () => {
                   )}
                 </button>
                 <div></div>
-                <button className="btn btn-primary mt-4">Register</button>
+                <button className="btn btn-primary mt-4 rounded-xl">Register</button>
               </fieldset>
             </form>
             {/* Google */}
             <button
               onClick={handleGoogleSignUp}
-              className="btn bg-white text-black border-[#e5e5e5]"
+              className="btn bg-white text-black border-[#e5e5e5] rounded-xl"
             >
               <svg
                 aria-label="Google logo"

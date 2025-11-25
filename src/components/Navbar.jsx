@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const [showTooltip, setShowTooltip] = useState(false);
 
-  console.log(showTooltip, "show Tooltip");
+  // console.log(showTooltip, "show Tooltip");
 
   const handleLogout = () => {
     logOut()

@@ -60,7 +60,7 @@ const Login = () => {
                 <label className="label">Email</label>
                 <input
                   type="email"
-                  className="input"
+                  className="input rounded-xl"
                   name="email"
                   placeholder="Email"
                 />
@@ -68,7 +68,7 @@ const Login = () => {
                 <label className="label">Password</label>
                 <input
                   type={showPassword ? "text" : "password"}
-                  className="input"
+                  className="input rounded-xl"
                   name="password"
                   placeholder="Password"
                 />
