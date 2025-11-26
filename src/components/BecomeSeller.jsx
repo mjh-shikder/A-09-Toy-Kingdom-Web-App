@@ -20,9 +20,10 @@ const BecomeSeller = () => {
     },[])
 
   return (
-    <div data-aos="fade-down"
+    <div data-aos="zoom-in"
      data-aos-easing="linear"
-     >
+    >
+      <title>Toy Kingdom - Become a Seller</title>
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-2xl shadow-lg space-y-6 my-5">
         <h2 className="text-3xl font-bold text-center text-accent">
           Become a Seller on Toy Kingdom

@@ -12,7 +12,7 @@ const OurFeatures = () => {
         Aos.init();
     }, [])
   return (
-    <div data-aos="fade-up" className="grid md:grid-cols-4 grid-cols-2 bg-base-100 mt-10 rounded-xl 
+    <div data-aos="fade-left" className="grid md:grid-cols-4 grid-cols-2 bg-base-100 mt-10 rounded-xl 
      md:h-44 space-y-5 md:space-y-0 py-6  ">
       <div className=" md:border-r h-full border-0 border-gray-200  flex items-center md:justify-center gap-5 text-primary hover:text-secondary ">
         <div>

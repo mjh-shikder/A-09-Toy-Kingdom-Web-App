@@ -22,7 +22,7 @@ const ShopByCategory = () => {
         Aos.init();
     }, [])
   return (
-    <div data-aos="fade-up">
+    <div data-aos="fade-right">
       <h2 className="text-4xl text-center font-semibold text-primary hover:text-secondary mt-10">
         Shop By Category
       </h2>

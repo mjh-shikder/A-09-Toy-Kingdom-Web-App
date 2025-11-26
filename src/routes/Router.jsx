@@ -10,6 +10,7 @@ import Login from "../components/Pages/Login";
 import Registration from "../components/Pages/Registration";
 import PrivateRoute from "./PrivateRoute";
 import BecomeSeller from "../components/BecomeSeller";
+import ForgetPassword from "../components/Pages/ForgetPassword";
 
 export const router = createBrowserRouter([
   {
@@ -48,6 +49,11 @@ export const router = createBrowserRouter([
             <BecomeSeller></BecomeSeller>{" "}
           </PrivateRoute>
         ),
+        hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: '/forget-password',
+        element: <ForgetPassword></ForgetPassword>,
         hydrateFallbackElement: <Loading></Loading>,
       },
       // {

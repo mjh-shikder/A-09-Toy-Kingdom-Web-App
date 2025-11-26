@@ -1,15 +1,19 @@
-import React, { use } from "react";
+import React, { use, useState } from "react";
 import MyContainer from "../MyContainer";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import { updateProfile } from "firebase/auth";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Registration = () => {
   //
   const { createUser, setUser, showPassword, setShowPassword, googleSignin } =
     use(AuthContext);
+  
+  const [error, setError] = useState('')
 
   const location = useLocation();
   const navigate = useNavigate()
@@ -32,21 +36,27 @@ const Registration = () => {
     // password validation
     if (password.length < 5) {
       toast.error('Password must be at last 6 Charecters')
+      setError('Password must be at least 6 Charecters')
       return
     }
 
     if (!/[A-Z]/.test(password)) {
       toast.error('Password must contain at least one uppercase letter');
+      setError('Password must contain at least one uppercase letter')
     return;
   }
   
     if(!/[a-z]/.test(password)) {
       toast.error('Password must contain at least one lowercase letter');
+      setError('Password must contain at least one lowercase letter')
       return;
     }
     //-------------
     
     console.log(email, password, photoURL);
+
+    // reset error
+    setError('');
 
     createUser(email, password)
       .then((res) => {
@@ -57,12 +67,12 @@ const Registration = () => {
         if (photoURL) {
           updateProfile(user, {photoURL})
         }
-        
         toast("Registration Successful");
        navigate(location.state ? location.state : '/')
       })
       .catch((error) => {
         toast.error(error.message);
+        setError(error.message);
       });
   };
 
@@ -83,7 +93,7 @@ const Registration = () => {
   
 
   return (
-    <div>
+    <div data-aos="fade-right">
       <title>Toy Kingdom - Register</title>
       <MyContainer>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mt-40 mb-40">
@@ -125,6 +135,7 @@ const Registration = () => {
                   name="password"
                   placeholder="Password"
                 />
+                { error && <p className="text-primary">{error}</p>}
                 <button
                   className=" absolute top-62 right-6"
                   onClick={handleShowHidePassword}

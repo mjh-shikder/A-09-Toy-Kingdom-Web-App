@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import MyContainer from "../MyContainer";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Login = () => {
   const { userLogin, showPassword, setShowPassword, googleSignin, setUser } = useContext(AuthContext);
   
 
+
   const location = useLocation()
   const navigate = useNavigate()
-// console.log(location);
+  // console.log(location);
 
 
   // Show and Hide Password 
@@ -50,12 +53,15 @@ const Login = () => {
         navigate(`${location.state ? location.state : '/'}`)
       })
       .catch(err => {
-      toast.error(err.message, err.code)
-    })
+        toast.error(err.message, err.code)
+      })
   };
 
+
+  
+
   return (
-    <div className="">
+    <div data-aos="fade-left" className="">
       <title>Toy Kingdom - Login</title>
       <MyContainer>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl mx-auto mb-40 mt-40">
@@ -72,6 +78,7 @@ const Login = () => {
                   className="input rounded-xl"
                   name="email"
                   placeholder="Email"
+                  
                 />
                 {/* Password Feild */}
                 <label className="label">Password</label>
@@ -92,9 +99,9 @@ const Login = () => {
                   )}
                 </button>
                 <div>
-                  <a className="link link-hover text-primary">
+                  <Link to={'/forget-password'}  className="link link-hover text-primary">
                     Forgot password?
-                  </a>
+                  </Link>
                 </div>
                 <button className="btn btn-secondary mt-4 rounded-xl">Login</button>
               </fieldset>

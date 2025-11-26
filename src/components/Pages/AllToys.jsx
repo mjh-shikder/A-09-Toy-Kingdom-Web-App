@@ -15,13 +15,13 @@ const AllToys = () => {
         Aos.init();
     }, [])
   return (
-    <div data-aos="fade-down"
+    <div
      
       className="bg-base-200">
       <title>Toys Kingdom - All Toys</title>
       <MyContainer>
               <Navbar></Navbar>
-              <section className="bg-white rounded-xl p-10 mt-10">
+              <section data-aos="fade-up" className="bg-white rounded-xl p-10 mt-10">
                   
               <h1 className="text-center text-4xl font-semibold text-primary hover:text-secondary  ">All Toys</h1>
               <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mt-10 space-y-10 place-items-center  '>

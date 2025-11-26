@@ -48,7 +48,7 @@ const ProfilePage = () => {
     <div>
       <title>Toys Kingdom - Profile</title>
 
-      <div data-aos="fade-up" className="flex flex-col items-center justify-center bg-white rounded-xl h-screen ">
+      <div data-aos="fade-up" className="flex flex-col items-center justify-center bg-white rounded-xl h-screen mt-10 ">
         <div className="avatar ">
           <div className="w-24 rounded-full">
             <img src={user?.photoURL} />

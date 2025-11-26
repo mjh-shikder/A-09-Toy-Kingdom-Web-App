@@ -52,6 +52,7 @@ const DetailsCard = () => {
 
   return (
     <div className="bg-base-200">
+      <title>Toy Kingdom - Products</title>
       <MyContainer>
         <Navbar></Navbar>
         <div className="bg-white mt-10 rounded-xl md:p-10 md:grid md:grid-cols-12 flex flex-col justify-start ">
