@@ -32,6 +32,9 @@ const Registration = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoURL = e.target.photoURL.value;
+    const displayName = e.target.name.value;
+   
+    
     
     // password validation
     if (password.length < 5) {
@@ -66,6 +69,9 @@ const Registration = () => {
         setUser(user);
         if (photoURL) {
           updateProfile(user, {photoURL})
+        }
+        if (displayName) {
+          updateProfile(user, {displayName} )
         }
         toast("Registration Successful");
        navigate(location.state ? location.state : '/')
