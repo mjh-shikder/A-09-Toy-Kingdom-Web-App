@@ -31,14 +31,17 @@ const DetailsCard = () => {
     toyName,
   } = toys;
 
+  // Hanlde buye now
   const handleBuyNow = () => {
     toast.success("Order Placed");
   };
 
+  // Add to cart button
   const handleAddtoCart = () => {
     toast("Added To Cart");
   };
 
+  // Try now button 
   const handleTryNow = (e) => {
     e.preventDefault();
     toast("Submit Done");

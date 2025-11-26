@@ -9,6 +9,7 @@ import AllToys from "../components/Pages/AllToys";
 import Login from "../components/Pages/Login";
 import Registration from "../components/Pages/Registration";
 import PrivateRoute from "./PrivateRoute";
+import BecomeSeller from "../components/BecomeSeller";
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <PrivateRoute><ProfilePage></ProfilePage></PrivateRoute> ,
+        element: (
+          <PrivateRoute>
+            <ProfilePage></ProfilePage>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -34,6 +39,15 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Registration></Registration>,
+        hydrateFallbackElement: <Loading></Loading>,
+      },
+      {
+        path: "/contribute",
+        element: (
+          <PrivateRoute>
+            <BecomeSeller></BecomeSeller>{" "}
+          </PrivateRoute>
+        ),
         hydrateFallbackElement: <Loading></Loading>,
       },
       // {
@@ -52,7 +66,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/card-details/:id",
-    element: <PrivateRoute><DetailsCard></DetailsCard></PrivateRoute> ,
+    element: (
+      <PrivateRoute>
+        <DetailsCard></DetailsCard>
+      </PrivateRoute>
+    ),
     loader: () => fetch("./data.json"),
     hydrateFallbackElement: <Loading></Loading>,
   },
@@ -62,6 +80,7 @@ export const router = createBrowserRouter([
     loader: () => fetch("./data.json"),
     hydrateFallbackElement: <Loading></Loading>,
   },
+
   // {
   //   path: '/login',
   //   element: <Login></Login>,
