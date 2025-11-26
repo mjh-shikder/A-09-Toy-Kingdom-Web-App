@@ -56,6 +56,9 @@ const ProfilePage = () => {
             <p className="text-accent ">
               Email: <span className="font-semibold ">{user?.email}</span>
             </p>
+            <p className="text-accent ">
+              Photo URL: <span className="font-semibold ">{user?.photoURL ? user.photoURL.slice(0,30) : 'No Photo URL'}</span>
+            </p>
           </div>
           <button
             onClick={handleOpenForm}

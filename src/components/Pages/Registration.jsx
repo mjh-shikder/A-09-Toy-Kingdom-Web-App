@@ -1,15 +1,21 @@
 import React, { use } from "react";
 import MyContainer from "../MyContainer";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { toast } from "react-toastify";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
+import { updateProfile } from "firebase/auth";
 
 const Registration = () => {
   //
   const { createUser, setUser, showPassword, setShowPassword, googleSignin } =
     use(AuthContext);
 
+  const location = useLocation();
+  const navigate = useNavigate()
+  
+  
+  
   // show hide password function
   const handleShowHidePassword = (e) => {
     e.preventDefault();
@@ -22,14 +28,38 @@ const Registration = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const photoURL = e.target.photoURL.value;
+    
+    // password validation
+    if (password.length < 5) {
+      toast.error('Password must be at last 6 Charecters')
+      return
+    }
 
+    if (!/[A-Z]/.test(password)) {
+      toast.error('Password must contain at least one uppercase letter');
+    return;
+  }
+  
+    if(!/[a-z]/.test(password)) {
+      toast.error('Password must contain at least one lowercase letter');
+      return;
+    }
+    //-------------
+    
     console.log(email, password, photoURL);
 
     createUser(email, password)
       .then((res) => {
         const user = res.user;
+        console.log(user);
+        
         setUser(user);
+        if (photoURL) {
+          updateProfile(user, {photoURL})
+        }
+        
         toast("Registration Successful");
+       navigate(location.state ? location.state : '/')
       })
       .catch((error) => {
         toast.error(error.message);
@@ -44,6 +74,7 @@ const Registration = () => {
             const user = res.user;
             setUser(user);
             toast.success('Login Successful')
+           navigate(location.state ? location.state : '/')
           })
           .catch(err => {
           toast.error(err.message, err.code)

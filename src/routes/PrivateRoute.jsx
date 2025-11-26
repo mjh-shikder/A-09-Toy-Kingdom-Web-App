@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
     
     // Tracking user locaton 
     const location = useLocation();
-console.log(location, 'private route');
+// console.log(location, 'private route');
 
 
     

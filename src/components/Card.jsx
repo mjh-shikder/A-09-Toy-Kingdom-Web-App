@@ -21,7 +21,7 @@ const Card = ({card}) => {
   return (
     <div className="card bg-base-200 w-96 shadow-sm text-accent ">
       <figure>
-        <img className="h-64" src={pictureURL} alt="kids-toy" />
+        <img className="h-64 w-full" src={pictureURL} alt="kids-toy" />
       </figure>
       <div className="card-body">
         <div className="flex items-center justify-between "> 

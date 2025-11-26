@@ -28,7 +28,6 @@ const DetailsCard = () => {
     sellerEmail,
     sellerName,
     subCategory,
-    toyId,
     toyName,
   } = toys;
 
@@ -39,6 +38,15 @@ const DetailsCard = () => {
   const handleAddtoCart = () => {
     toast("Added To Cart");
   };
+
+  const handleTryNow = (e) => {
+    e.preventDefault();
+    toast("Submit Done");
+
+    e.target.name.value = "";
+    e.target.email.value = "";
+  };
+
   return (
     <div className="bg-base-200">
       <MyContainer>
@@ -93,6 +101,42 @@ const DetailsCard = () => {
               >
                 Add to Cart
               </button>
+            </div>
+            <div className="border-b border-gray-100 my-5"></div> {/* Border */}
+
+            {/* Try now section */}
+            <div className=" ">
+              <h2 className="text-2xl text-accent font-semibold  ">Try Now Toys</h2>
+              <form
+                onSubmit={handleTryNow}
+                className="bg-base-200 p-5 rounded-xl mt-5"
+              >
+                <fieldset className="fieldset relative">
+                  {/* Email Feild */}
+                  <label className="label">Name</label>
+                  <input
+                    type="text"
+                    className="input rounded-xl w-full"
+                    name="name"
+                    placeholder="Name"
+                    required
+                  />
+                  {/* Password Feild */}
+                  <label className="label">Email</label>
+                  <input
+                    type="email"
+                    className="input rounded-xl w-full"
+                    name="email"
+                    placeholder="Email"
+                    required
+                  />
+
+                  <button className="btn  btn-secondary btn-outline mt-4 rounded-xl">
+                    Try Now
+                  </button>
+                  
+                </fieldset>
+              </form>
             </div>
           </div>
         </div>

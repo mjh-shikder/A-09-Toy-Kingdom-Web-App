@@ -11,7 +11,7 @@ const Login = () => {
 
   const location = useLocation()
   const navigate = useNavigate()
-console.log(location);
+// console.log(location);
 
 
   // Show and Hide Password 
@@ -96,13 +96,13 @@ console.log(location);
                     Forgot password?
                   </a>
                 </div>
-                <button className="btn btn-secondary mt-4">Login</button>
+                <button className="btn btn-secondary mt-4 rounded-xl">Login</button>
               </fieldset>
             </form>
             {/* Google */}
             <button
               onClick={handleGoogleLogin}
-              className="btn bg-white text-black border-[#e5e5e5]"
+              className="btn bg-white text-black border-[#e5e5e5] rounded-xl"
             >
               <svg
                 aria-label="Google logo"
