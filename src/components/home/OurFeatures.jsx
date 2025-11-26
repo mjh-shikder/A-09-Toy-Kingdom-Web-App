@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MyContainer from "../MyContainer";
 import { TbTruckDelivery, TbTruckLoading } from "react-icons/tb";
 import { FaBoxOpen } from "react-icons/fa";
 import { RiSecurePaymentFill, RiShakeHandsFill } from "react-icons/ri";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const OurFeatures = () => {
+    // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
   return (
-    <div className="grid md:grid-cols-4 grid-cols-2 bg-base-100 mt-10 rounded-xl 
+    <div data-aos="fade-up" className="grid md:grid-cols-4 grid-cols-2 bg-base-100 mt-10 rounded-xl 
      md:h-44 space-y-5 md:space-y-0 py-6  ">
       <div className=" md:border-r h-full border-0 border-gray-200  flex items-center md:justify-center gap-5 text-primary hover:text-secondary ">
         <div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -14,9 +14,15 @@ import GunImg from "./../../assets/raygun.png";
 import SpinnerImg from "./../../assets/spinners.png";
 import TrainImg from "./../../assets/train.png";
 import { Link, Navigate } from "react-router";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 const ShopByCategory = () => {
+    // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
   return (
-    <div>
+    <div data-aos="fade-up">
       <h2 className="text-4xl text-center font-semibold text-primary hover:text-secondary mt-10">
         Shop By Category
       </h2>

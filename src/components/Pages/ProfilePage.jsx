@@ -1,9 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contexts/AuthContext";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { toast } from "react-toastify";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+
+
 
 
 const ProfilePage = () => {
@@ -35,11 +39,16 @@ const ProfilePage = () => {
     });
   };
 
+  // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
+  
   return (
     <div>
       <title>Toys Kingdom - Profile</title>
 
-      <div className="flex flex-col items-center justify-center bg-white rounded-xl h-screen ">
+      <div data-aos="fade-up" className="flex flex-col items-center justify-center bg-white rounded-xl h-screen ">
         <div className="avatar ">
           <div className="w-24 rounded-full">
             <img src={user?.photoURL} />
@@ -64,11 +73,11 @@ const ProfilePage = () => {
             onClick={handleOpenForm}
             className="btn btn-secondary rounded-xl btn-outline my-5"
           >
-            Update Info{" "}
+            Edit Profile{" "}
           </button>
 
           {isOpen ? (
-            <form
+            <form data-aos="flip-up"
               className="bg-base-200 p-5 rounded-xl w-2xs "
               onSubmit={handleUpdateInfo}
             >

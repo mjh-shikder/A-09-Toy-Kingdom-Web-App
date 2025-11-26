@@ -14,12 +14,15 @@ const BecomeSeller = () => {
     e.target.email.value = "";
     };
     
+    // Aos fucntion
     useEffect(() => {
         Aos.init();
     },[])
 
   return (
-    <div>
+    <div data-aos="fade-down"
+     data-aos-easing="linear"
+     >
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-2xl shadow-lg space-y-6 my-5">
         <h2 className="text-3xl font-bold text-center text-accent">
           Become a Seller on Toy Kingdom

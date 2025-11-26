@@ -1,9 +1,20 @@
 import { Link } from "react-router";
 import { LiaStarSolid } from "react-icons/lia";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+import { useEffect } from "react";
 
 const NewArrivals = () => {
+
+    // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
+
   return (
-    <div className="bg-base-100 py-10 rounded-xl mt-10">
+    <div data-aos="flip-down"
+     data-aos-easing="linear"
+     data-aos-duration="1000" className="bg-base-100 py-10 rounded-xl mt-10">
       <h1 className="text-4xl text-center font-semibold text-secondary hover:text-primary ">
         New Arrivals
       </h1>

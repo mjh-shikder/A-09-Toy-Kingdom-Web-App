@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Logo from '../assets/Logo.png'
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const Footer = () => {
+    // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
     return (
-        <footer className="footer sm:footer-horizontal bg-base-200 text-accent py-10">
+        <footer data-aos="fade-down"
+     
+      className="footer sm:footer-horizontal bg-base-200 text-accent py-10">
   <aside>
     <img className='w-40' src={Logo} alt="" />
     <p>

@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MyContainer from "../MyContainer";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 import { Link, useLoaderData } from "react-router";
 import Card from "../Card";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 
 const AllToys = () => {
   const data = useLoaderData();
 
+    // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
   return (
-    <div className="bg-base-200">
+    <div data-aos="fade-down"
+     
+      className="bg-base-200">
       <title>Toys Kingdom - All Toys</title>
       <MyContainer>
               <Navbar></Navbar>

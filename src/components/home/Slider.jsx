@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import Aos from "aos";
+import 'aos/dist/aos.css'
 export default function Slider() {
+
+    // Aos fucntion
+    useEffect(() => {
+        Aos.init();
+    }, [])
   return (
-    <div>
+    <div data-aos="fade-right">
       <Swiper
         spaceBetween={20}
         slidesPerView={1}
