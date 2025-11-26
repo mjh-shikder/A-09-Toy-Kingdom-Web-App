@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { toast } from "react-toastify";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+
+
+// handle become a seller btn
 const BecomeSeller = () => {
   const handleApply = (e) => {
     e.preventDefault();
@@ -7,7 +12,12 @@ const BecomeSeller = () => {
 
     e.target.name.value = "";
     e.target.email.value = "";
-  };
+    };
+    
+    useEffect(() => {
+        Aos.init();
+    },[])
+
   return (
     <div>
       <div className="max-w-4xl mx-auto p-6 bg-white rounded-2xl shadow-lg space-y-6 my-5">
@@ -21,7 +31,7 @@ const BecomeSeller = () => {
           our platform is easy, fast, and absolutely secure.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-6">
+        <div data-aos="fade-left" className="grid md:grid-cols-3 gap-6 mt-6">
           <div className="p-5 rounded-xl border">
             <h3 className="font-semibold text-lg mb-2 text-accent ">
               📦 List Your Products
@@ -51,7 +61,7 @@ const BecomeSeller = () => {
           </div>
         </div>
 
-        <div className="mt-8 bg-base-200 border border-secondary p-6 rounded-xl">
+        <div data-aos="fade-right" className="mt-8 bg-base-200 border border-secondary p-6 rounded-xl">
           <h3 className="font-semibold text-xl text-secondary mb-2">
             Why Sell With Us?
           </h3>
@@ -63,7 +73,7 @@ const BecomeSeller = () => {
           </ul>
         </div>
 
-        <div className="text-center mt-6">
+        <div data-aos="fade-up" className="text-center mt-6">
           <form
             onSubmit={handleApply}
             className="bg-base-200 p-5 rounded-xl mt-5"
