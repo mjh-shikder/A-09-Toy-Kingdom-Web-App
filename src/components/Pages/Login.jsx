@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext } from "react";
 import MyContainer from "../MyContainer";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
@@ -8,7 +8,7 @@ import Aos from "aos";
 import 'aos/dist/aos.css'
 
 const Login = () => {
-  const { userLogin, showPassword, setShowPassword, googleSignin, setUser } = useContext(AuthContext);
+  const { userLogin, showPassword, setShowPassword, googleSignin, setUser, setTypedEmail } = useContext(AuthContext);
   
 
 
@@ -78,6 +78,7 @@ const Login = () => {
                   className="input rounded-xl"
                   name="email"
                   placeholder="Email"
+                  onChange={(e) => setTypedEmail(e.target.value)}
                   
                 />
                 {/* Password Feild */}

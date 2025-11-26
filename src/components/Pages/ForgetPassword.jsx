@@ -1,33 +1,39 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { sendPasswordResetEmail } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../Contexts/AuthContext";
 
 const ForgetPassword = () => {
+  const { typedEmail} = useContext(AuthContext);
+
+    // console.log(typedEmail);
+    
+    
   // Aos fucntion
   useEffect(() => {
     Aos.init();
   }, []);
 
-  const emailRef = useRef();
+  
   // handle forgot btn
   const handleForget = (e) => {
     e.preventDefault();
-    const email = emailRef.current.value;
+    const email = typedEmail
 
-    console.log("forget password", email);
+    // console.log("forget password", email);
 
     sendPasswordResetEmail(auth, email)
       .then(() => {
-          toast.warning('Varification Email Sent')
-          e.target.email.value =''
-            
+        toast.warning("Password Reset Link Sent");
+          e.target.email.value = "";
+          window.open("https://mail.google.com")
       })
       .catch((err) => {
-      toast.warning(err.message, err.code)
-    })
+        toast.warning(err.message, err.code);
+      });
   };
 
   return (
@@ -37,7 +43,7 @@ const ForgetPassword = () => {
     >
       <form
         onSubmit={handleForget}
-        className="bg-white p-5 rounded-xl md:w-4/12 w-10/12 "
+        className="bg-white p-5 rounded-xl md:w-5/12 w-10/12 "
       >
         <fieldset className="fieldset ">
           {/* Email Feild */}
@@ -47,11 +53,12 @@ const ForgetPassword = () => {
             className="input w-full rounded-xl"
             name="email"
             placeholder="Email"
-            ref={emailRef}
+            
+            defaultValue={typedEmail}
           />
 
-          <button className="btn btn-secondary mt-4 rounded-xl">
-            Send Reset Link
+          <button className="btn btn-primary mt-4 rounded-xl">
+            Send Password Reset Link
           </button>
         </fieldset>
       </form>

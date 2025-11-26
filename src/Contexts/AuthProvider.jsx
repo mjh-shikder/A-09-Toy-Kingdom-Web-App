@@ -8,7 +8,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
-
+  const [typedEmail, setTypedEmail]= useState('')
   // console.log('user from authprovider', {user});
   
 
@@ -57,6 +57,8 @@ const AuthProvider = ({ children }) => {
     showPassword,
     setShowPassword,
     googleSignin,
+    typedEmail,
+    setTypedEmail,
   };
 
   return <AuthContext value={authInfo}>{children}</AuthContext>;
