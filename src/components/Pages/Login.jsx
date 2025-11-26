@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MyContainer from "../MyContainer";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../../Contexts/AuthContext";
@@ -10,7 +10,7 @@ import 'aos/dist/aos.css'
 const Login = () => {
   const { userLogin, showPassword, setShowPassword, googleSignin, setUser, setTypedEmail } = useContext(AuthContext);
   
-
+const [error, setError] = useState('')
 
   const location = useLocation()
   const navigate = useNavigate()
@@ -40,6 +40,7 @@ const Login = () => {
       })
       .catch((error) => {
         toast.error(error.message, error.code);
+        setError(error.message)
       });
   };
   
@@ -100,9 +101,10 @@ const Login = () => {
                   )}
                 </button>
                 <div>
-                  <Link to={'/forget-password'}  className="link link-hover text-primary">
+                  <Link to={'/forget-password'}  className="link link-hover text-secondary">
                     Forgot password?
                   </Link>
+                  {error && <p className="text-primary">{error}</p> }
                 </div>
                 <button className="btn btn-secondary mt-4 rounded-xl">Login</button>
               </fieldset>

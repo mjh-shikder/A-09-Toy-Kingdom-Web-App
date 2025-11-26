@@ -37,7 +37,8 @@ const ForgetPassword = () => {
   };
 
   return (
-    <div
+      <div
+          title="Forgot Password"
       data-aos="flip-right"
       className="flex justify-center h-screen items-center "
     >
