@@ -12,7 +12,7 @@ import PrivateRoute from "./PrivateRoute";
 import BecomeSeller from "../components/BecomeSeller";
 import ForgetPassword from "../components/Pages/ForgetPassword";
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
@@ -72,13 +72,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "/card-details/:id",
-    element: (
-      <PrivateRoute>
-        <DetailsCard></DetailsCard>
-      </PrivateRoute>
-    ),
-    loader: () => fetch("./data.json"),
-    hydrateFallbackElement: <Loading></Loading>,
+  element: (
+    <PrivateRoute>
+      <DetailsCard />
+    </PrivateRoute>
+  ),
+  loader: async () => {
+    const res = await fetch("/data.json");           // ← Add leading slash
+    const json = await res.json();
+    return json.toys || json.data || json;           // ← Return the array
+  },
   },
   {
     path: "/all-toys",
@@ -102,3 +105,5 @@ export const router = createBrowserRouter([
     element: <ErrorPage></ErrorPage>,
   },
 ]);
+
+export default router;

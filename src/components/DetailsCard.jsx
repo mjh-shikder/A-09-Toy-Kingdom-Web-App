@@ -7,29 +7,23 @@ import { FaStar } from "react-icons/fa";
 import { toast, ToastContainer } from "react-toastify";
 
 const DetailsCard = () => {
-  const data = useLoaderData();
+
+const toys = useLoaderData();        // ← Now it's ALWAYS an array
   const { id } = useParams();
 
-  const [toys, setToys] = useState({});
-  //  console.log(toys);
+  const toy = toys.find(item => item.toyId == id);
 
-  useEffect(() => {
-    const toys = data.find((singleData) => singleData.toyId == id);
-
-    setToys(toys);
-  }, [data, id]);
-
-  const {
-    availableQuantity,
-    description,
-    pictureURL,
-    price,
-    rating,
-    sellerEmail,
-    sellerName,
-    subCategory,
-    toyName,
-  } = toys;
+const {
+  toyName,
+  price,
+  rating,
+  pictureURL,
+  description,
+  availableQuantity,
+  sellerName,
+  sellerEmail,
+  subCategory,
+} = toy;
 
   // Hanlde buye now
   const handleBuyNow = () => {
