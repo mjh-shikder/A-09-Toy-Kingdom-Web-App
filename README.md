@@ -1,16 +1,79 @@
-# React + Vite
+# 🧸 Toy Kingdom – React E-Commerce Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive toy store web application built with **React**, **React Router**, **Tailwind CSS**, **DaisyUI**, **AOS**, **Swiper**, **React Icons**, **React Toastify**, and **Firebase Authentication**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
+👉 **Live URL:** _https://heroic-quokka-bd4a62.netlify.app/_
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🎯 Purpose of the Project
+Toy Kingdom is a feature-rich toy marketplace focusing on:
 
-## Expanding the ESLint configuration
+- A modern UI/UX experience  
+- Smooth animations and transitions  
+- Real-time Firebase authentication  
+- Dynamic product display using sliders  
+- Clean React components and routing  
+- Beginner-friendly structure for MERN/React learners
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication
+- Firebase Email/Password Login  
+- Google Sign-In  
+- Password Reset  
+- Protected Routes for authorized pages  
+
+### 🛍️ User Interface
+- Fully responsive layout  
+- Built with Tailwind + DaisyUI  
+- Icons via React Icons  
+- Smooth scroll animations with AOS  
+
+### 🎠 Interactive Elements
+- Swiper sliders for banners/products  
+- Toast notifications using React-Toastify  
+
+### 🌐 Routing
+- React Router v6  
+- Dynamic route pages  
+- Custom 404 Not Found page  
+
+---
+
+## 📦 NPM Packages Used
+
+| Package | Description |
+|--------|-------------|
+| **react** | Core library |
+| **react-router-dom** | Routing |
+| **tailwindcss** | CSS framework |
+| **daisyui** | Tailwind UI components |
+| **react-icons** | Icon library |
+| **aos** | Scroll animations |
+| **swiper** | Sliders/carousels |
+| **react-toastify** | Toast messages |
+| **firebase** | Auth & hosting |
+| **vite** (if used) | Dev build tool |
+
+---
+
+## 🛠️ Project Setup
+
+### 1️⃣ Clone the Repository
+### 2️⃣ Install Dependencies
+npm install
+### 3️⃣ Run Development Server
+npm run dev
+### 4️⃣ Build for Production
+npm run build
+
+📄 License
+
+This project is open-source and free to use.
+
