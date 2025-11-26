@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import Navbar from "./Navbar";
 import MyContainer from "./MyContainer";
 import Footer from "./Footer";
@@ -8,7 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 
 const DetailsCard = () => {
 
-const toys = useLoaderData();        // ← Now it's ALWAYS an array
+const toys = useLoaderData();       
   const { id } = useParams();
 
   const toy = toys.find(item => item.toyId == id);

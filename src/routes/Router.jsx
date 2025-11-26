@@ -78,9 +78,9 @@ const router = createBrowserRouter([
     </PrivateRoute>
   ),
   loader: async () => {
-    const res = await fetch("/data.json");           // ← Add leading slash
+    const res = await fetch("/data.json");           
     const json = await res.json();
-    return json.toys || json.data || json;           // ← Return the array
+    return json.toys || json.data || json;          
   },
   },
   {
