@@ -5,7 +5,7 @@ A modern and responsive toy store web application built with **React**, **React 
 ---
 
 ## 🔗 Live Demo
-👉 **Live URL:** _https://chimerical-figolla-294333.netlify.app/_
+👉 **Live URL:** _https://mjhtoykingdom.netlify.app/_
 
 ---
 
